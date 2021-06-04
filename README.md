@@ -22,6 +22,8 @@ We have access to a dataset containing over 20000 sale records of houses in King
 
 We start off with exploring corelation between price and other variables. We build our baseline model using sqft. living, highest correlation and renovation, our key factor. The baseline model gets a score of 0.48. Next, we focus on adding numerical features such as grade, condition, bedrooms, and bathrooms. After that, we add categorical features such as waterfront, basement, and zip codes. The latest two mentioned are preprocessed as dummy variables using OneHotEncoder. We also utilize recursive feather elimination along the way before ending up with first draft model. We evaluate the model by testing for linear regression assumption. Finally, we choose to normalize the model and eliminate insignificant variables. As a result, our final model scores pretty well at 0.86.  
 
+![mathodology](./images/Flipping Houses in KC - George & Ramil.png)
+
 ## Results
 
 1. We have found that renovation has an impact on increasing a selling price by 7% of its geometric mean. 
