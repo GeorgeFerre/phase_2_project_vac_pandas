@@ -34,6 +34,8 @@ We start off with exploring corelation between price and other variables. We bui
 - Having a house in Seattle increases the price by 120%.
 - Having a house in Federal Way, Auburn, and Kent, however, decrease the price by 21%, 22% and 23%, respectively.
 
+![locations](./images/locations.png)
+
 ![Map](./images/map.png)
 
 3. House feature: waterfront has the highest impact on price!
@@ -42,6 +44,8 @@ We start off with exploring corelation between price and other variables. We bui
 - The price shows an increment as low as 0.008% per 100 increasing in square feet lot.
 - Bathrooms increases the price by 4% per bathroom.
 - Number of floors, however, decreases the price by 2%.
+
+![features](./images/features.png)
 
 ## Conclusions
 
