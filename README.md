@@ -1,66 +1,70 @@
-# Phase 2 Project
+![House Hunter](./images/house_hunter.jpeg)
 
-Another module down--you're almost half way there!
+# Flipping Houses in King County
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
+**Authors**: [George Ferre](mailto:george@flatironschool.com) and [Ramil Chaimongkolbutr](mailto:ramil@flatironschool.com)
 
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
+## Overview
 
-## Project Overview
+In this project, we develop a linear regression model in order to determine factors that drive the price of houses in King county. As a result, we can make suggestions regarding whether or not should our stakeholders invest in flipping houses in this area. 
 
-For this project, you will use regression modeling to analyze house sales in a northwestern county.
+## Business Problem
 
-### The Data
+We build a pricing model to help our stakeholders understand the impact of renovation on houses in King County. The goal is to find out that renovation can actually increase the value of the house and is worthwhile for investment. 
 
-This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
+We also identify specific areas that the house should be and features of the house our stakeholders should focus on. Our model should be able to tell us something about the relationship between these features of the house and its price.  
 
-It is up to you to decide what data from this dataset to use and how to use it. If you are feeling overwhelmed or behind, we recommend you ignore some or all of the following features:
+## Data
 
-* date
-* view
-* sqft_above
-* sqft_basement
-* yr_renovated
-* zipcode
-* lat
-* long
-* sqft_living15
-* sqft_lot15
+We have access to a dataset containing over 20000 sale records of houses in King County during 2014-2015, including selling price, house features and locations. The data combine with both numerical and categorical attributes of the houses. Even though some of our data are in numerical form, they have to be treated as categorical, for example, zip codes, renovation, and basement. Some of numerical attributes such as latitude and longitude are irrelevant to our model.    
 
-### Business Problem
+## Methodology
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
+We start off with exploring corelation between price and other variables. We build our baseline model using sqft. living, highest correlation and renovation, our key factor. The baseline model gets a score of 0.48. Next, we focus on adding numerical features such as grade, condition, bedrooms, and bathrooms. After that, we add categorical features such as waterfront, basement, and zip codes. The latest two mentioned are preprocessed as dummy variables using OneHotEncoder. We also utilize recursive feather elimination along the way before ending up with first draft model. We evaluate the model by testing for linear regression assumption. Finally, we choose to normalize the model and eliminate insignificant variables. As a result, our final model scores pretty well at 0.86.  
 
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+## Results
 
-## Deliverables
+1. We have found that renovation has an impact on increasing a selling price by 7% of its geometric mean. 
 
-There are three deliverables for this project:
+2. Locations play a big role in driving house price in both directions:
+- Having a house in Medina can increase the price by 180%.
+- Having a house in Bellevue increases the price by 150%.
+- Having a house in Seattle increases the price by 120%.
+- Having a house in Federal Way, Auburn, and Kent, however, decrease the price by 21%, 22% and 23%, respectively.
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+![Map](./images/map.png)
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+3. House feature: waterfront has the highest impact on price!
+- Waterfront property can increase the price by 60%.
+- The price increases by 2% of every 100 increasing in square feet living.
+- The price shows an increment as low as 0.008% per 100 increasing in square feet lot.
+- Bathrooms increases the price by 4% per bathroom.
+- Number of floors, however, decreases the price by 2%.
 
-### Key Points
+## Conclusions
 
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
+We agree that renovation matters! I believe that a renovated house generally has high price than one that is not.
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
+We recommend that the property should be bought in the right area. 
 
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
+We have found that our house flippers should pay attention to a larger house rather than a larger lot.
 
-## Getting Started
+Last but not least, we concur that waterfront property is gold! We suggest grabing it immediately!
 
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
+## Next Steps
 
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
+We can improve our model by adding some more complexity such as polynomial regression. We might be able to get more understanding and provide a better explanation to our stakeholders.
+ 
+## For More Information
+See full analysis in [Jupyter Notebook](./project2code.ipynb) or check out this [presentation](./presentation.pdf). 
+For additional info, contact Ramil Chaimongkolbutr at [ramil.ming@flatironschool.com](mailto:ramil.ming@flatironschool.com) or George Ferre at [georgeaferre@flatironschool.com](mailto:georgeaferre@flatironschool.com)
 
-## Project Submission and Review
+## Repository Structure
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
-
-## Summary
-
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+```
+├── data
+├── images
+├── README.md
+├── project_two_presentation.pdf
+└── project_two_code.ipynb
+```
